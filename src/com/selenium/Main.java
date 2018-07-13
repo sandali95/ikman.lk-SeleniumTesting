@@ -82,7 +82,7 @@ public class Main {
                     String priceMerge = priceArr[2] + priceArr[3] + priceArr[4];
                     Integer priceVal = Integer.parseInt(priceMerge);
 
-                    //Getting no. of beds//a[@class='col-6 lg-3 pag-next']
+                    //Getting no. of beds
                     String beds = ad.findElement(By.xpath("//p[@class='item-meta']//span[1]")).getText();
                     String[] bedsArr = beds.split(" ");
                     Integer bedsCount = Integer.parseInt(bedsArr[1]);
@@ -100,9 +100,7 @@ public class Main {
                 }
             }
             try {
-                String nextBtnLink = "//a[@class='col-6 lg-3 pag-next']";
-                WebElement nextBtn = ((FirefoxDriver) driver).findElementByXPath(nextBtnLink);
-                nextBtn.click();
+                ((FirefoxDriver) driver).findElementByXPath("//a[@class='col-6 lg-3 pag-next']").click();
             } catch (Exception e) {
                 System.out.println("End of ads");
             }
